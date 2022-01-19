@@ -1,0 +1,18 @@
+{% extends 'webpage1/base.html' %}
+
+{% block head %}
+<script>alert("Welcome Dear to the second page.")</script>
+
+<style>
+    .bold{
+        font-weight: 890;
+    }
+</style>
+{% endblock %}
+
+{% block body%}
+    {% include 'webPage1/navbar.html' %}
+    
+    <h1 class="{% cycle 'bold' '' %}">Working Fine</h1>
+    <h1 class="{% cycle 'bold' '' %}">Alternate heading now not bold</h1>
+{% endblock %}
