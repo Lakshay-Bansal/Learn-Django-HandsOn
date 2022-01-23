@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+    <h1>College List</h1>
+    
+    {% for colge in colleges %}
+        <li>
+            <!-- If some college are deleted from the database then 
+            for those id like 1 in this case the page 
+            will not get created -->
+            <a href="{% url 'college' 3 %}">{{ colge.college_name }}</a>
+            {% comment %}
+            <a href="{% url 'college' college.pk %}">{{ colge.college_name }}</a>  
+            {% endcomment %}  
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
