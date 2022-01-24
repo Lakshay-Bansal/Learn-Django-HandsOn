@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block body %}
+    {% include 'main/components/navbar.html' %}
+
+    <div class="container">
+        <h2>Question Asked by User</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="collection">
+                    {% for ques in question_list %}
+                        {% comment %}
+                            <!-- <a href="{% url 'question' ques.id %}" class="collection-item"> -->
+                        {% endcomment %}
+                        <div class="collection-item">
+                            <!-- Using slug in the url -->
+                            <a href="{% url 'question' ques.slug %}" class="collection-item">
+                                {{ ques.content }}
+                            </a>    
+                        </div>
+                        
+                    {% endfor %} 
+                  </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
