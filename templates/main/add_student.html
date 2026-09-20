@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+    <h1>Fill the student data to add it in database</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ studentForm }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
