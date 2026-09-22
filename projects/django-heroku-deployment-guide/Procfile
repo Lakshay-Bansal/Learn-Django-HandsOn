@@ -1,2 +1,14 @@
+# ==============================================================================
+# Heroku Procfile
+# Format: <process type>: <command to run>
+# ==============================================================================
+
+# Web Process:
+# Runs Gunicorn as the production WSGI HTTP server.
+# Replace 'depDjangoHeroku' with your Django project folder name (where wsgi.py is located).
+# '--log-file -' directs all access and error logs to stdout for Heroku (view via: heroku logs --tail).
 web: gunicorn depDjangoHeroku.wsgi --log-file -
 
+# Optional Release Phase:
+# Uncomment the line below to enable automatic migrations on deploy:
+# release: python manage.py migrate
