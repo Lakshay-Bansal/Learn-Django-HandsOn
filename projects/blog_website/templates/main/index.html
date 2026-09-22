@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+    <h1>What would you like to read</h1>
+
+    <h5>Top 10 articles are:</h5>
+    <ul>
+        {% for article in latest_articles %}
+            <!-- <li>{{ article }}</li> -->
+            <li>
+                <a href="{% url 'get_article' article.id %}">{{ article }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <h3>Publish at: {{ article.publish_date }}</h3>
+    <h4>
+        Written By:
+        {% for author in article.authors.all %}
+            <a href="{% url 'get_author_articles' author.id %}">
+                {{ author }},
+            </a>
+        {% endfor %}
+    </h4>
+    <p>
+        {{ article.context }}
+    </p>
+{% endblock %}
