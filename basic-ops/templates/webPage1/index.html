@@ -1,0 +1,34 @@
+{% extends 'webpage1/base.html' %}
+
+{% block head %}
+<script>alert("Welcome Dear to the page.")</script>
+{% endblock %}
+
+{% block body %}
+    {% include 'webPage1/navbar.html' %}
+
+    <h1>Whats up. How's you doing.</h1>
+    <ul>
+        <li>Lakshay Bansal</li>
+        <li>Shubham Sharma</li>
+        <li>Jatin</li>
+    </ul>
+    <span>Developed by: Lakshay Bansal</span>
+
+    {% comment %}
+        Comment line such that it will not appear in the webpage when did inspect
+    {% endcomment %}
+
+    <!-- Dyamic feature using Ginger -->
+    <h1>{{heading}}</h1>
+    
+    <div class="container">
+        <ul class="collection">
+            {% for name in friends %}
+                <li class="collection-item">{{name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <span>Deceloped by: {{developer}}</span>
+{% endblock %}
